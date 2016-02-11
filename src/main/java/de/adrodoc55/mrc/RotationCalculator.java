@@ -1,7 +1,7 @@
 package de.adrodoc55.mrc;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.Locale;
 
 public class RotationCalculator {
 
@@ -32,7 +32,7 @@ public class RotationCalculator {
   }
 
   private static String dts(double d) {
-    NumberFormat nf = DecimalFormat.getInstance();
+    NumberFormat nf = NumberFormat.getInstance(Locale.ENGLISH);
     nf.setMaximumFractionDigits(15);
     String result = nf.format(d);
     if ("0".equals(result))
