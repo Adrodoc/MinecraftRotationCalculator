@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = '1.6'
+
+ext.libs = [
+  beanfabrics:  'org.beanfabrics:beanfabrics-swing:1.4.0'
+]
+
+task wrapper(type: Wrapper) { gradleVersion = '2.11' }
+
+repositories { mavenCentral() }
+
+dependencies { compile libs.beanfabrics }
+
+jar {
+  configurations.runtime.each { File file ->
+    if(file.isDirectory()) {
+      from file
+    } else {
+      from zipTree(file)
+    }
+  }
+  manifest {
+    attributes(
+        'Created-By':   'Adrodoc55 (adrodoc55@googlemail.com)',
+        'Main-Class':   'de.adrodoc55.mrc.Main'
+        )
+  }
+}
