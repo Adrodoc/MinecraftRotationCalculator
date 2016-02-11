@@ -45,7 +45,7 @@ public class MrcFrame extends JFrame implements View<de.adrodoc55.mrc.MrcFramePM
    * Constructs a new <code>MrcFrame</code>.
    */
   public MrcFrame() {
-    super("Minecraft Rotation Calculator by Adrodoc55");
+    super("Minecraft Rotation Calculator v0.1 - by Adrodoc55");
     init();
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setSize(800, 500);
