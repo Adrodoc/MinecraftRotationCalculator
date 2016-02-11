@@ -35,7 +35,7 @@ public class RotationCalculator {
     NumberFormat nf = NumberFormat.getInstance(Locale.ENGLISH);
     nf.setMaximumFractionDigits(15);
     String result = nf.format(d);
-    if ("0".equals(result))
+    if ("0".equals(result) || "-0".equals(result))
       return "";
     else
       return result;
